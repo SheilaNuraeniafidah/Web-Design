@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- STYLING -->
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .waktu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        #setWaktu {
+            margin-top: 2rem;
+            padding: .5rem;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .button-container #btnStart {
+            background-color: green;
+            color: white;
+            padding: .5rem;
+        }
+
+        .button-container #btnPause {
+            background-color: cadetblue;
+            color: white;
+            padding: .5rem;
+        }
+
+        .button-container #btnStop {
+            background-color: tomato;
+            color: white;
+            padding: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>TIMER SEDERHANA</h2>
+    <div class="waktu-container">
+        <div class="jam">
+            <h1 id="tampilanJam">00</h1>
+        </div>
+        <h2>:</h2>
+        <div class="menit">
+            <h1 id="tampilanMenit">00</h1>
+        </div>
+        <h2>:</h2>
+        <div class="detik">
+            <h1 id="tampilanDetik">00</h1>
+        </div>
+    </div>
+    <div class="input-container">
+        <p>
+            <label for="jam">Jam:</label>
+            <input type="number" name="jam" id="inputJam">
+        </p>
+        <p>
+            <label for="menit">Menit:</label>
+            <input type="number" name="menit" id="inputMenit">
+        </p>
+        <p>
+            <label for="detik">Detik:</label>
+            <input type="number" name="detik" id="inputDetik">
+        </p>
+    </div>
+    <button id="setWaktu" onclick="setNum()">Set Waktu</button>
+    <div class="button-container">
+        <button id="btnStart" onclick="startNum()">Start</button>
+        <button id="btnPause" onclick="pauseNum()">Pause</button>
+        <button id="btnStop" onclick="stopNum()">Stop</button>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+        var jam = 0;
+        var menit = 0;
+        var detik = 0;
+        var timer;
+
+        function setNum() {
+            jam = document.getElementById("inputJam").value || 0;
+            menit = document.getElementById("inputMenit").value || 0;
+            detik = document.getElementById("inputDetik").value || 0;
+
+            updateDisplay();
+        }
+
+        function startNum() {
+            timer = setInterval(updateTimer, 1000);
+        }
+
+        function pauseNum() {
+            clearInterval(timer);
+        }
+
+        function stopNum() {
+            clearInterval(timer);
+            jam = 0;
+            menit = 0;
+            detik = 0;
+            updateDisplay();
+        }
+
+        function updateTimer() {
+            if (detik > 0) {
+                detik--;
+            } else {
+                if (menit > 0) {
+                    menit--;
+                    detik = 59;
+                } else {
+                    if (jam > 0) {
+                        jam--;
+                        menit = 59;
+                        detik = 59;
+                    } else {
+                        clearInterval(timer);
+                        alert("Waktu Habis!");
+                    }
+                }
+            }
+
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("tampilanJam").innerText = padNumber(jam);
+            document.getElementById("tampilanMenit").innerText = padNumber(menit);
+            document.getElementById("tampilanDetik").innerText = padNumber(detik);
+        }
+
+        function padNumber(num) {
+            return (num < 10 ? "0" : "") + num;
+        }
+    </script>
+</body>
+</html>

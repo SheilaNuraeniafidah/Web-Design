@@ -1,0 +1,9 @@
+Program Studi 	: Pendidikan Teknik Informatika dan Komputer
+Kelas 		: A
+Angkatan 	: 2022
+Fakultas 	: FKIP
+
+Anggota Kelompok: 
+Adik Nur Halimah 	(K3522003)
+Naufal Husnianto 	(K3522055)
+Sheila Nur'Aeni Afidah	(K3522079)

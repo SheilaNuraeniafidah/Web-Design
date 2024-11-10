@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pencari Kata Kembar</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Poppins, sans-serif;
+    }
+
+    #hasil {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .highlight {
+      background-color: yellow;
+      color: red;
+    }
+
+    #jumlahKata {
+      font-weight: bold;
+      font-size: 23px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Pencari Kata Kembar</h1>
+<textarea id="inputText" rows="10" cols="100"></textarea><br>
+<button onclick="highlightWords()">Cari</button>
+
+<div id="hasil">
+  <p id="awal">[Paragraf hasil]</p>
+  <div id="highlightedText"></div>
+  <p id="jumlahKata"><span></span></p>
+</div>
+
+<script>
+function highlightWords() {
+  const inputText = document.getElementById('inputText').value;
+  const kataArray = inputText.match(/\b\w+\b/g);
+
+  if (kataArray) {
+    let kataUnik = [];
+    let kataDuplikat = [];
+
+    kataArray.forEach(kata => {
+      if (kataUnik.includes(kata)) {
+        if (!kataDuplikat.includes(kata)) {
+          kataDuplikat.push(kata);
+        }
+      } else {
+        kataUnik.push(kata);
+      }
+    });
+
+    const teksDiketahui = highlightDuplikat(inputText, kataDuplikat);
+    const jumlahKata = kataDuplikat.length;
+
+    document.getElementById('awal').style.display = 'none';
+    document.getElementById('highlightedText').innerHTML = teksDiketahui;
+    document.getElementById('jumlahKata').innerHTML = `Jumlah kata kembar: <span>${jumlahKata}</span>`;
+  } else {
+    alert('Masukkan teks terlebih dahulu.');
+  }
+}
+
+function highlightDuplikat(teks, duplikat) {
+  let teksDiketahui = teks;
+  duplikat.forEach(kata => {
+    const regex = new RegExp(`\\b${kata}\\b`, 'g');
+    teksDiketahui = teksDiketahui.replace(regex, `<span class="highlight">${kata}</span>`);
+  });
+  return teksDiketahui;
+}
+</script>
+
+</body>
+</html>
