@@ -1,2 +1,2 @@
 # Web-Design
-Web Design with bootstrap
+Learn Web Design with bootstrap
