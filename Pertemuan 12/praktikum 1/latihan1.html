@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+	<title>local storage</title>
+</head>
+<body>
+	<h1> halo,selamat datang <span id="nama"></span></h1>
+	<script type="text/javascript">
+		let hasil = localStorage.getItem("nama");
+		if (hasil===null){
+			let nama = prompt('masukkan nama anda : ')
+			localStorage.setItem("nama", nama)
+			document.getElementaryById('nama').innerText = nama
+		} else {
+			document.getElementaryById('nama').innerText = localStorage.getItem("nama")
+		}
+	</script>
+</body>
+</html>
