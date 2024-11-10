@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <title>latihan 5</title>
+    </head>
+    <body bgcolor="EBE4DI">
+        <center>
+        <h1 style="font-family:Candara; color: rgb(85, 53, 11);" > System information academic 
+            <br>for library membership </h1></center>
+        <img src="https://rosyidwz.files.wordpress.com/2013/12/logo-uns-besar-biru.png" alt="logo" width="75px">
+        <br>
+        <form action="libraryform.php" method="post" bgcolor="B4B4B3">
+            <fieldset>
+                <legend style="font-family: Candara; color: rgb(85, 53, 11);"> identity </legend>
+                    <table cellpadding ="5opx" cellspacing = "5" width = "400px">
+                        <p>
+                            <tr>
+                                <td><label> no.membership </label></td>
+                                <td><input type="text" id= "no.membership"></td>
+                            </tr>
+                        </p>
+                        <p>
+                        <tr>
+                            <td><label >no.identity  </label></td>
+                            <td><input type="text" id= "no.identity"></td>
+                        </tr>
+                        </p>
+                        <p>
+                            <tr>
+                                <td><label> faculty </label></td>
+                                <td><select name="faculty" >
+                                    <option value="fkip"> fkip </option>
+                                    <option value="feb"> feb </option>
+                                    <option value="fpsi"> fpsi </option>
+                                    <option value="fsrd"> fsrd </option>
+                                </select></td>
+                            </tr>
+                        </p>
+                        <p><tr>
+                            <td><label> name </label></td>
+                            <td><input type="text" id= "name"></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><label > date birth </label></td>
+                            <td><input type="date"></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><label >  position </label></td>
+                            <td><select name="jabatan" id="">
+                                <option value="lecturer"> lecturer </option>
+                                <option value="student">student </option>
+                                <option value="staff"> staff</option>
+                            </select></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><label > gender  </label></td>
+                            <td><select name="male">
+                                <option value="male "> male </option>
+                                <option value="female"> female </option>
+                            </select></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><label for=""> address  </label></td>
+                            <td><input type="textarea" address = "address"></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><label for=""> postal code  </label></td>
+                            <td><input type="text" code = "postal code"></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><label for=""> phone number  </label></td>
+                            <td><input type="number" name="phonenumber" ></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><label for=""> email  </label></td>
+                            <td><input type="email" name="email" id=""></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><label for=""> password  </label></td>
+                            <td><input type="password" name="password" id=""></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><label for=""> confirm passsword </label></td>
+                            <td><input type="password" name="password" id=""></td></tr>
+                        </p>
+                        <p><tr>
+                            <td><input type="button" value="save" style="box-shadow: 0cap; background-color: rgb(180, 220, 222);font-family: Candara;"> <input type="button" value="out" style="background-color: rosybrown;"></td></tr>
+                        </p>
+                    </table>
+            </fieldset>          
+        </form>
+    </body>
+</html>
