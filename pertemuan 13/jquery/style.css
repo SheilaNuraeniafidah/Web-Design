@@ -1,0 +1,65 @@
+body{
+	font-family:'Arial', sans-serif; 
+	margin : 0;
+	padding:0;
+	background:#262626;
+}
+header{
+	background-color: #333;
+	color:white;
+	text-align: center;
+	padding:1em;
+	text-transform: uppercase;
+}
+main{
+	background:url('https://img.freepik.com/free-photo/movie-back');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+}
+nav{
+	margin:0 auto;
+	padding-top: 20px;
+	text-align: center;
+}
+ul{
+	padding:0;
+	position:relative;
+	width:100%;
+	margin:10px 10px 30px;
+}
+ul li{
+	cursor:pointer;
+	list-style: none;
+	display:inline-block;
+	border-radius: 5px;
+	padding:10px 20px;
+	color:#fff;
+	border:1px solid #fff;
+	margin-left: 15px;
+	font-family: arial;
+	text-transform: uppercase;
+}
+ul li:hover, .active{
+	background:#fff;
+	color:#262626;
+}
+section{
+	position:relative;
+	padding:30px;
+	box-sizing: border-box;
+}
+section .box{
+	width:23%;
+	height:100px;
+	line-height: 100px;
+	text-align: center;
+	color:#fff;
+	font-size: 2em;
+	float:left;
+	box-sizing: border-box;
+	margin:10px;
+}
+.action{
+	background:url('https://hips.hearstapps.com/hmg-prod/images/best-action-movies-1675193014.jpeg');
+}
